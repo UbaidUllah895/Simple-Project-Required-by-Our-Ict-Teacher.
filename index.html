@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>shabab Fastfood</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Shabab<span>Fastfood</span></div>
+  <ul>
+    <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+    <li><a onclick="showPage('menu')" id="nav-menu">Menu</a></li>
+    <li><a onclick="showPage('cart')" id="nav-cart">Cart</a></li>
+    <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+  </ul>
+  <button class="cart-btn" onclick="showPage('cart')">🛒 Cart <span id="cart-count">0</span></button>
+</nav>
+
+<!-- HOME PAGE -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <span class="badge">🔥 Now Open!</span>
+    <div class="burger-icon">🍔</div>
+    <h1>Shabab<span>Fastfood</span></h1>
+    <p class="tagline">da angrizano khurakona taza taza aw khwaga khwaga</p>
+    <button onclick="showPage('menu')">View Menu →</button>
+    <div class="stats">
+      <div><strong>50+</strong><small>Items</small></div>
+      <div><strong>10K</strong><small>Customers</small></div>
+      <div><strong>15min</strong><small>Delivery</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- MENU PAGE -->
+<div class="page" id="page-menu">
+  <h2 class="title">Zamong khurakona</h2>
+  <p class="sub">Taza Taza KHwarakona, zan dak ka bachiya. Add your favourites!</p>
+  <div class="grid" id="menu-grid"></div>
+</div>
+
+<!-- CART PAGE -->
+<div class="page" id="page-cart">
+  <h2 class="title">Your Cart</h2>
+  <p class="sub">Review your items and place your order.</p>
+  <div id="cart-content"></div>
+</div>
+
+<!-- CONTACT PAGE -->
+<div class="page" id="page-contact">
+  <div class="contact-wrap">
+    <div class="cinfo">
+      <h2 class="title">Rabita ki osai</h2>
+      <p>!Tabidar hr wakht srif miscall kwa khu da shpi 2 na pas na zama plar bia qarigi</p>
+      <div class="details">
+        <p>📍 Kabal Chowk</p>
+        <p>📞 +92 3298738778 / 03431681647</p>
+        <p>⏰ Daily: 10:00 AM – 2:00 AM</p>
+        <p>✉️ ubaidullah94895@gmail.com</p>
+      </div>
+    </div>
+    <div class="cform">
+      <h3>Send a Message</h3>
+      <div class="field">
+        <label>Your Name *</label>
+        <input type="text" id="c-name" placeholder="e.g. Bacha "/>
+        <span class="err" id="err-name">⚠️ Please enter your name.</span>
+      </div>
+      <div class="field">
+        <label>Email Address</label>
+        <input type="email" id="c-email" placeholder="adnan@example.com"/>
+      </div>
+      <div class="field">
+        <label>Your Message *</label>
+        <textarea id="c-msg" rows="4" placeholder="Write your message here..."></textarea>
+        <span class="err" id="err-msg">⚠️ Please enter a message.</span>
+      </div>
+      <button onclick="submitForm()">Send Message 🚀</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST NOTIFICATION -->
+<div id="toast"><span id="toast-msg"></span></div>
+
+<script src="script.js"></script>
+</body>
+</html>
